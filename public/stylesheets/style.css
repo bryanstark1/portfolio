@@ -1,8 +1,490 @@
-body {
-  padding: 50px;
-  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+/* 
+COLORS
+Lapis Lauzuli = #2F6690
+Cerulean = #3A7CA5
+Platinum = #D9DCD6
+Indigo Dye = #16425B
+Sky Blue = #81C3D7
+https://coolors.co/2f6690-3a7ca5-d9dcd6-16425b-81c3d7
+*/
+
+
+* {
+  margin: 0;
+  font-family: 'Open Sans', sans-serif;
+  color: #16425B;
 }
 
-a {
-  color: #00B7FF;
+html {
+  height: 100%;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  min-height: 100%;
+  background-color: #D9DCD6;
+}
+
+.dim {
+  opacity: .4;
+}
+
+/* ========== HEADER START ========== */
+header {
+  z-index: 1;
+  position: absolute;
+  width: 100%;
+}
+
+.title-container {
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #D9DCD6;
+  height: 6rem;
+  box-shadow: 0px 1px 10px 0px rgba(0,0,0,.2);
+}
+
+.header-title {
+  display: flex;
+  align-items: baseline;
+  font-size: 2em;
+  margin-left: 1rem;
+  gap: .35em;
+}
+
+.header-title > a {
+  text-decoration: none;
+  font-weight: 500;
+  font-style: italic;
+}
+
+.subtitle {
+  display: none;
+}
+
+.mobile-subtitle {
+  font-weight: 300;
+  font-size: 1.5rem;
+  font-style: italic;
+  color: #2F6690;
+}
+
+.mobile-menu {
+  margin-right: 20px;
+  margin-top: 0.4rem;
+}
+
+.navigation-menu {
+  display: none;
+  background-color: #D9DCD6;
+  box-shadow: 0px 1px 10px 0px rgba(0,0,0,.2);
+}
+
+ul {
+  display: flex;
+  list-style: none;
+  padding: 0;
+}
+
+.main-links {
+  flex-direction: column;
+  margin-bottom: 1.5rem;
+}
+
+.extra-links {
+  justify-content: space-evenly;
+  gap: 2rem;
+  padding-bottom: 1.5rem;
+}
+
+.main-links>li {
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  border-bottom: 1px solid rgba(113, 106, 92, .2); /* Variation of #716A5C to reduce opacity of border*/
+}
+
+.main-links>li:nth-of-type(3) {
+  border-bottom: none;
+}
+
+.main-links>li>a {
+  display: flex;
+  flex-grow: 1;
+  justify-content: center;
+  padding-top: 1.5rem;
+  padding-bottom: 1.5rem;
+}
+
+li > a {
+  text-decoration: none;
+  color: #2F6690;
+  font-size: 1.25rem;
+  font-weight: 400;
+}
+/* ========== HEADER END ========== */
+
+
+
+/* ========== HOME PAGE START ========== */
+article {
+  z-index: 0;
+  display: flex;
+  flex-grow: 1;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  position: relative;
+  margin-top: 96px;
+}
+
+article > a.section {
+  display: flex;
+  flex-grow: 1;
+  width: 100%;
+  align-items: center;
+  text-align: center;
+  text-decoration: none;
+  box-shadow: 0px 1px 10px 0px rgba(0,0,0,.2);
+}
+
+article > a.section.about {
+  background-color: #3A7CA5;
+}
+
+article > a.section.resume {
+  background-color: #2F6690;
+}
+
+article > a.section.projects {
+  background-color: #16425B;
+}
+
+article > a.section > div {
+  display: flex;
+  flex-grow: 1;
+  align-items: center;
+  justify-content: center;
+  font-style: italic;
+  font-size: 1.35rem;
+  color: #D9DCD6;
+}
+/* ========== HOME PAGE END ========== */
+
+
+
+/* ========== PROJECTS PAGE START ========== */
+article.projects {
+  flex-direction: column;
+  justify-content: flex-start;
+  margin-top: 25%;
+  gap: 3rem;
+}
+
+/* ========== CAROUSEL START ========== */
+.carousel-container {
+	width: 100%;
+	display: flex;
+	justify-content: center;
+  margin-top: 5rem;
+}
+
+.carousel-images {
+	width: 85%;
+	background: #16425B;
+	padding: 10px;
+	border-radius: 10px;
+	box-sizing: border-box;
+  box-shadow: 0px 1px 10px 0px rgba(0,0,0,.2);
+}
+
+.carousel-images img,
+.carousel-text .card {
+	width: 100%;
+	border-radius: 10px;
+	display: none;
+  color: #D9DCD6;
+}
+
+.carousel-images img:first-of-type,
+.carousel-text .card:first-of-type {
+  display: block;
+}
+
+.carousel-button {
+	align-self: center;
+	padding: 10px;
+	border-radius: 50%;
+	text-align: center;
+}
+.carousel-button > svg {
+  height: 36px;
+  width: 36px;
+}
+
+.carousel-button > svg:hover {
+  opacity: .5;
+}
+
+.carousel-button:hover {
+	cursor: pointer;
+	color: white;
+}
+
+.carousel-text {
+  margin: 0 15%;
+}
+/* ========== CAROUSEL END ========== */
+
+/* ========== PROJECTS PAGE END ========== */
+
+
+
+/* ========== ABOUT PAGE START ========== */
+article.about {
+justify-content: center;
+}
+
+.biography {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.bio-card {
+  margin: 2rem 2rem 0 2rem;
+  background-color: #16425B;
+  padding: 2rem;
+  border-radius: 10px;
+  box-shadow: 0px 1px 10px 0px rgba(0,0,0,.2);
+}
+
+.bio-card > img {
+  float: right;
+  width: 150px;
+  margin-left: 1rem;
+}
+
+.bio-card > h2 {
+  display: none;
+}
+
+.bio-card > p {
+  line-height: 2rem;
+  color: #D9DCD6;
+}
+
+.biography > a {
+  width: fit-content;
+  margin-top: 2rem;
+  padding: .5rem;
+  border: 1px solid #16425B;
+  border-radius: 10px;
+  text-decoration: none;
+  box-shadow: 0px 1px 10px 0px rgba(0,0,0,.2);
+}
+
+/* ========== MODAL START ========== */
+#modal {
+	z-index: 2;
+	display: none;
+  align-items: center;
+  justify-content: center;
+	background-color: rgba(0,0,0,0.5);
+	position: fixed;
+	top: 0;
+	left: 0;
+	height: 100%;
+	width: 100%;
+}
+
+#modal-textbox {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+	background-color: #16425B;
+  padding: 2rem;
+	width: 550px;
+	border-radius: 10px;
+  box-shadow: 0px 1px 10px 0px rgba(0,0,0,.2);
+}
+
+#modal-textbox > h1,
+#modal-textbox > p,
+#modal-textbox > a {
+  color: #D9DCD6;
+  text-align: center;
+}
+
+#modal-textbox > h1 {
+  margin: 1rem;
+}
+
+#close {
+  margin-top: 3rem;
+  text-decoration: none;
+  border: 1px solid #D9DCD6;
+  border-radius: 10px;
+  padding: .5rem;
+}
+/* ========== MODAL END ========== */
+
+/* ========== ABOUT PAGE END ========== */
+
+
+
+
+
+/* 
+
+DESKTOP/LANDSCAPE TABLET MEDIA QUERY
+
+https://www.w3schools.com/howto/howto_css_media_query_breakpoints.asp
+
+*/
+
+@media only screen and (min-width: 768px) {
+
+  body {
+    flex-direction: row;
+  }
+
+  /* ========== HEADER START========== */
+  header {
+    position: static;
+    flex-direction: column;
+    flex-grow: unset;
+    justify-content: space-between;
+    min-width: 201px;
+    max-width: 201px;
+    color: #16425B;
+    background-color: #D9DCD6;
+    display: flex;
+    box-shadow: 0px 1px 10px 0px rgba(0,0,0,.2);
+  }
+
+  .title-container {
+    box-shadow: none;
+    flex-grow: unset;
+    margin: 15px;
+  }
+
+  .header-title {
+    margin: auto;
+    flex-direction: column;
+    margin-top: 1rem;
+    align-items: center;
+  }
+
+  .mobile-subtitle {
+    display: none;
+  }
+
+  .subtitle {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .subtitle>p {
+    font-size: 1rem;
+    color: #2F6690;
+  }
+
+  .mobile-menu {
+    display: none;
+  }
+
+  .navigation-menu {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: auto;
+    margin-top: auto;
+    box-shadow: none;
+  }
+
+  .main-links {
+    margin-bottom: 7rem;
+  }
+
+  .extra-links {
+    position: absolute;
+    bottom: 0;
+    gap: 1.75rem;
+    margin-bottom: 1rem
+  }
+
+  .main-links>li {
+    border-bottom: none;
+  }
+
+  .main-links>li>a {
+    padding-top: .75rem;
+    padding-bottom: .75rem;
+  }
+
+  a:hover,
+  article > a.section:hover {
+    opacity: .6;
+  }
+
+  svg {
+    width: 26px;
+    height: 26px;
+  }
+  /* ========== HEADER END ========= */
+
+
+
+  /* ========== HOME PAGE START ========== */
+  article {
+    flex-direction: row;
+    margin: 0
+  }
+
+  article > a {
+    height: 100%;
+  }
+
+  article > a > div {
+    height: 100%;
+  }
+/* ========== HOME PAGE END ========== */
+
+
+
+/* ========== ABOUT PAGE START ========== */
+article.about {
+  margin: 0 10%;
+}
+
+.bio-card > h2 {
+  display: block;
+  margin-bottom: 1rem;
+  color: #D9DCD6;
+  font-style: italic;
+}
+/* ========== ABOUT PAGE END ========== */
+
+
+/* ========== RESUME PAGE START ========== */
+iframe {
+  height: 90%;
+}
+/* ========== RESUME PAGE END ========== */
+
+/* ========== PROJECTS PAGE START ========= */
+article.projects {
+  margin-top: 10%;
+}
+
+.carousel-container {
+  margin-top: 0;
+  max-width: 1000px;
+}
+/* ========== PROJECTS PAGE END ========= */
 }
