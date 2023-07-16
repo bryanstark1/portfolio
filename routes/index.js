@@ -13,7 +13,13 @@ router.get('/about', function(req, res, next) {
 
 // GET Resumé page
 router.get('/resume', function(req, res, next) {
-  res.render('resume', { title: 'resume' });
+  res.render('resume', { title: 'Resumé' });
 });
+
+// GET Projects page
+router.get('/projects', function(req, res, next) {
+  res.render('projects', { title: 'Projects' });
+});
+
 
 module.exports = router;
